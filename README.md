@@ -35,7 +35,8 @@ Actual in-game functionality of these are explained when implemented
  
 ### Entities
 
- - [ ] A _drivable_ thing, e.g. something like a boat for land 
+ - [ ] A _drivable_ thing, e.g. something like a boat for land
+ - [ ] A custom golem, built like the snowgolem
   
 ### Crafting
 
