@@ -62,6 +62,11 @@ Mainly the following resources:
  - [Forge Docs](https://mcforge.readthedocs.io/en/1.15.x/)
  - [Cadiboo's Example Mod](https://github.com/Cadiboo/Example-Mod)
  - [Minecraft by Example](https://github.com/TheGreyGhost/MinecraftByExample)
+
+## Contributors
+
+ - PickaxeEngineer
+ - SphereArchitect
  
 
 ## License
