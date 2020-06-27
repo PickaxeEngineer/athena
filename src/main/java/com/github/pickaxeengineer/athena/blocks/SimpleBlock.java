@@ -4,6 +4,7 @@ import com.github.pickaxeengineer.athena.AthenaMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraftforge.common.ToolType;
 
 /**
  * A very basic solid cube with nothing special.
@@ -32,7 +33,7 @@ public class SimpleBlock extends Block {
     public static final String REGISTRY_NAME = "simple_block";
 
     public SimpleBlock(){
-        super(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1f));
+        super(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1f).harvestTool(ToolType.SHOVEL));
     }
 
 }
