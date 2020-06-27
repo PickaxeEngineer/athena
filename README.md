@@ -14,13 +14,13 @@ Actual in-game functionality of these are explained when implemented
 ### Blocks
  
  - [x] A simple cuboid block -- Yer standard block
- - [ ] A block with custom model
+ - [x] A block with custom model
  - [ ] Block interacting with redstone
  - [ ] A block whose placing is facing based (i.e. like log)
  
 ### Items
  
- - [ ] A simple item -- Yer standard item
+ - [x] A simple item -- Yer standard item
  - [ ] A wrench, an item which interacts with stuff
  - [ ] Tools -- Yer standard minecraft tools
  - [ ] Item with inventory (e.g. backpack)
@@ -62,6 +62,8 @@ Mainly the following resources:
  - [Forge Docs](https://mcforge.readthedocs.io/en/1.15.x/)
  - [Cadiboo's Example Mod](https://github.com/Cadiboo/Example-Mod)
  - [Minecraft by Example](https://github.com/TheGreyGhost/MinecraftByExample)
+ - [MrCrayfish Model Creator](https://mrcrayfish.com/tools?id=mc)
+ - [MrCrayfish](https://github.com/MrCrayfish)
 
 ## Contributors
 

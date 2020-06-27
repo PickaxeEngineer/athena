@@ -1,6 +1,7 @@
 package com.github.pickaxeengineer.athena;
 
 import com.github.pickaxeengineer.athena.blocks.AthenaBlockRegistry;
+import com.github.pickaxeengineer.athena.items.AthenaItemRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -45,6 +46,8 @@ public class AthenaMod
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         AthenaBlockRegistry.BLOCKS.register(modEventBus);
         AthenaBlockRegistry.BLOCK_ITEMS.register(modEventBus);
+        modEventBus.addListener(AthenaBlockRegistry::onClientSetupEvent);
+        AthenaItemRegistry.ITEMS.register(modEventBus);
 
     }
 

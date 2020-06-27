@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": {"model": "athena:block/rough_metal_model"}
+  }
+}

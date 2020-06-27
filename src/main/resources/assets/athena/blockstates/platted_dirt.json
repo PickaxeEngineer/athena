@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {"model": "athena:block/platted_dirt_model"},
+      {"model": "athena:block/platted_dirt_model", "y": 90},
+      {"model": "athena:block/platted_dirt_model", "y": 180},
+      {"model": "athena:block/platted_dirt_model", "y": 270}
+    ]
+  }
+}

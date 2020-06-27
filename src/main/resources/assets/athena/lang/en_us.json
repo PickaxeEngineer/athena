@@ -1,4 +1,7 @@
 {
   "block.athena.simple_block": "Simple Block",
-  "block.athena.ground": "Ground"
+  "block.athena.ground": "Ground",
+  "block.athena.rough_metal": "Rough Metal",
+  "block.athena.platted_dirt": "Platted Dirt",
+  "item.athena.net": "Bug Net"
 }
