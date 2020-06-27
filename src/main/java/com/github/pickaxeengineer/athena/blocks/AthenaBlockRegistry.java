@@ -1,6 +1,6 @@
-package com.example.examplemod.blocks;
+package com.github.pickaxeengineer.athena.blocks;
 
-import com.example.examplemod.AthenaMod;
+import com.github.pickaxeengineer.athena.AthenaMod;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
