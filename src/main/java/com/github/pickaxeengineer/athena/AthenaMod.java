@@ -28,7 +28,7 @@ public class AthenaMod
     public static final String MODID = "athena";
 
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public AthenaMod() {
         // Register the setup method for modloading
