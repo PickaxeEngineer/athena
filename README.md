@@ -17,6 +17,8 @@ Actual in-game functionality of these are explained when implemented
  - [x] A block with custom model
  - [ ] Block interacting with redstone
  - [ ] A block whose placing is facing based (i.e. like log)
+ - [ ] A multi-block block (like the bed / door)
+ - [ ] A fence-ish block: Non-cuboid, neighbour sensitive
  
 ### Items
  
@@ -49,27 +51,44 @@ Actual in-game functionality of these are explained when implemented
 
  - [ ] Multiblock structure
  - [ ] JEI Integration
+ - [ ] Event based things to integrate into vanilla
+ - [ ] Dependency to other mod and usage of other mod
  
 ## Software Architecture
 
-Another goal of this mod is to come up with as much well written architecture,
-as possible, ultimately, in order to easily extend the mod.
-In particular, the registry process is targeted with this statement.
+Another goal of this mod is to come up with as much well written
+architecture and processes to facilitate an ecosystem for future modding
+ambitions.
+
+- Registries: Registering simple blocks has lots of boilerplate code
+
+ -[x] Generic Block Registry
+ -[x] Generic Item Registry
+ -[ ] Tool Registry
+ 
+- Processes / Tools: Very similar external files might be created in an automated way (e.g. gradle tasks)
+
+ -[ ] Process to create external files for simple blocks
+ -[ ] Process to create external files for simple items
 
 ## Credits
 
-Mainly the following resources:
+Without the awesome people working on forge, this would not be possible.
+
+Documentation and Code of these resources have contributed (in no particular order):
 
  - [Forge Docs](https://mcforge.readthedocs.io/en/1.15.x/)
  - [Cadiboo's Example Mod](https://github.com/Cadiboo/Example-Mod)
  - [Minecraft by Example](https://github.com/TheGreyGhost/MinecraftByExample)
  - [MrCrayfish Model Creator](https://mrcrayfish.com/tools?id=mc)
  - [MrCrayfish](https://github.com/MrCrayfish)
+ - [Mekanism](https://github.com/mekanism/Mekanism)
 
 ## Contributors
 
  - PickaxeEngineer
  - SphereArchitect
+ - Anonymous Coder
  
 
 ## License
