@@ -28,9 +28,9 @@ import java.util.stream.Collectors;
  */
 public class JackhammerItem extends ToolItem {
 
-    private static final Set<Material> EFFECTIVE_ON = ImmutableSet.of(Material.ROCK, Material.EARTH, Material.CLAY, Material.PACKED_ICE, Material.ORGANIC, Material.SAND, Material.PISTON, Material.ANVIL);
+    // TODO Better model and animation?
 
-    // TODO Custom harvest speed
+    private static final Set<Material> EFFECTIVE_ON = ImmutableSet.of(Material.ROCK, Material.EARTH, Material.CLAY, Material.PACKED_ICE, Material.ORGANIC, Material.SAND, Material.PISTON, Material.ANVIL);
 
     protected JackhammerItem(@Nonnull ItemGroup group) {
         super(1, -2.8f, ItemTier.DIAMOND, Collections.emptySet(),
@@ -42,7 +42,6 @@ public class JackhammerItem extends ToolItem {
 
     @Override
     public boolean canHarvestBlock(BlockState blockIn) {
-        // TODO Only abel to mine dirt?
         Material mat = blockIn.getMaterial();
         int requiredLevel = blockIn.getHarvestLevel();
         ToolType requiredToolType = blockIn.getHarvestTool();
@@ -52,10 +51,23 @@ public class JackhammerItem extends ToolItem {
             // respect harvest level
             if (ourLevel >= requiredLevel) {
                 // is effectiv against
-                return EFFECTIVE_ON.stream().anyMatch(m -> m == mat);
+                return true;
             }
         }
-        return false;
+        // PickaxeItem has this additional check as well
+        return EFFECTIVE_ON.contains(mat);
+    }
+
+    @Override
+    public float getDestroySpeed(ItemStack stack, BlockState state) {
+        // check for material effectiveness
+        Material material = state.getMaterial();
+        boolean pickaxeEffective = material == Material.ROCK || material == Material.IRON || material == Material.ANVIL;
+        if (pickaxeEffective || getToolTypes(stack).stream().anyMatch(state::isToolEffective)) {
+            // Pretend to be diamond level
+            return ItemTier.DIAMOND.getEfficiency(); // Mekanism RefinedObsidian: 25
+        }
+        return 1; // Seems to be the default else
     }
 
     @Override
@@ -67,36 +79,52 @@ public class JackhammerItem extends ToolItem {
             });
         }
         // Server side actual breaking of blocks
-        if(!worldIn.isRemote){
+        if (!worldIn.isRemote) {
             // get facing
             Vec3d playerLooking = entityLiving.getLookVec();
             Direction facing = Direction.getFacingFromVector(playerLooking.x, playerLooking.y, playerLooking.z);
+            // TODO replace facing from above with actually "side looking at"
+
             List<BlockPos> coords = new ArrayList<>();
-            // https://github.com/Direwolf20-MC/MiningGadgets/blob/750a8ef8c643238e0e9b4dc274d506bba2400ba6/src/main/java/com/direwolf20/mininggadgets/common/items/gadget/MiningCollect.java#L29
-            boolean vertical = facing.getAxis().isVertical();
-            // TODO horizontal mining is not working --> own lookup and remove DW20's
-            Direction up = vertical ? entityLiving.getHorizontalFacing() : Direction.UP;
-            Direction down = up.getOpposite();
-            Direction right = vertical ? up.rotateY() : up.rotateYCCW();
-            Direction left = right.getOpposite();
-            coords.add(pos.offset(up).offset(left));
-            coords.add(pos.offset(up));
-            coords.add(pos.offset(up).offset(right));
-            coords.add(pos.offset(left));
-            coords.add(pos);
-            coords.add(pos.offset(right));
-            coords.add(pos.offset(down).offset(left));
-            coords.add(pos.offset(down));
-            coords.add(pos.offset(down).offset(right));
+            switch (facing) {
+                case UP:
+                case DOWN:
+                    // regular 2d case in x and z axis
+                    for (int i = -1; i <= 1; i++) {
+                        for (int j = -1; j <= 1; j++) {
+                            coords.add(pos.add(i, 0, j));
+                        }
+                    }
+                    break;
+                case EAST:
+                case WEST:
+                    // regular 2d case in y and z axis
+                    for (int i = -1; i <= 1; i++) {
+                        for (int j = -1; j <= 1; j++) {
+                            coords.add(pos.add(0,i,j));
+                        }
+                    }
+                    break;
+                case NORTH:
+                case SOUTH:
+                    // regular 2d case in y and x axis
+                    for (int i = -1; i <= 1; i++) {
+                        for (int j = -1; j <= 1; j++) {
+                            coords.add(pos.add(i,j,0));
+                        }
+                    }
+                    break;
+            }
             // Only keep actually harvestable blocks
-            List<BlockPos> toMine = coords.stream().filter( e -> canHarvestBlock(worldIn.getBlockState(e))).collect(Collectors.toList());
+            List<BlockPos> toMine = coords.stream().filter(e -> canHarvestBlock(worldIn.getBlockState(e))).collect(Collectors.toList());
             List<ItemStack> drops = new ArrayList<>(9);
             toMine.forEach(p -> {
                 // te is null, as there is no te and its nullable
-                drops.addAll(Block.getDrops(worldIn.getBlockState(p), (ServerWorld)worldIn, p, null));
+                drops.addAll(Block.getDrops(worldIn.getBlockState(p), (ServerWorld) worldIn, p, null));
                 worldIn.setBlockState(p, Blocks.AIR.getDefaultState());
             });
             // Spawn the drops
+            // TODO spawning location TBD
             drops.forEach(itemStack -> worldIn.addEntity(new ItemEntity(worldIn, pos.getX(), pos.getY(), pos.getZ(), itemStack)));
         }
         return true;

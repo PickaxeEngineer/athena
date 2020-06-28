@@ -22,6 +22,7 @@ Actual in-game functionality of these are explained when implemented
  
  - [x] A simple item -- Yer standard item
  - [ ] A wrench, an item which interacts with stuff
+ - [x] Area of effect mining tool (hammer)
  - [ ] Tools -- Yer standard minecraft tools
  - [ ] Item with inventory (e.g. backpack)
  
