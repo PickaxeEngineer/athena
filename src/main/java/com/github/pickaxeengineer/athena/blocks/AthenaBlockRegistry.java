@@ -45,7 +45,7 @@ public class AthenaBlockRegistry {
 
     static{
         SPECIAL_RENDERED_BLOCKS.add(new Tuple<>(() -> (Block)PLATTED_DIRT.get(), RenderType.getSolid()));
-        SPECIAL_RENDERED_BLOCKS.add(new Tuple<>(() -> (Block)LIGHT_FRAME.get(), RenderType.getSolid()));
+        SPECIAL_RENDERED_BLOCKS.add(new Tuple<>(() -> (Block)LIGHT_FRAME.get(), RenderType.getCutout()));
     }
 
     /* Standard Block Addition */ // TODO Refactor
