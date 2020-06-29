@@ -27,7 +27,7 @@ public class GenericBlock extends Block {
         return block;
     }
 
-    public static <T extends GenericBlock> RegistryObject<T> register(String registryName, ItemGroup group, Supplier<T> blockSupplier) {
+    public static <T extends Block> RegistryObject<T> register(String registryName, ItemGroup group, Supplier<T> blockSupplier) {
         RegistryObject<T> block = AthenaBlockRegistry.BLOCKS.register(registryName, blockSupplier);
         AthenaBlockRegistry.BLOCK_ITEMS.register(registryName, () -> {
             Item.Properties props = new Item.Properties().group(group);

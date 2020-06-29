@@ -121,7 +121,7 @@ public class JackhammerItem extends ToolItem {
             toMine.forEach(p -> {
                 // te is null, as there is no te and its nullable
                 drops.addAll(Block.getDrops(worldIn.getBlockState(p), (ServerWorld) worldIn, p, null));
-                worldIn.setBlockState(p, Blocks.AIR.getDefaultState());
+                worldIn.removeBlock(p, false);
             });
             // Spawn the drops
             // TODO spawning location TBD

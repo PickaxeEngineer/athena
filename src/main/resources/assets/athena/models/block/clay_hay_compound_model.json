@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "athena:block/clay_hay_compound_top",
+    "side": "athena:block/clay_hay_compound_side"
+  }
+}

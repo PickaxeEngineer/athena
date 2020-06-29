@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:sugar_cane"
+  },
+  "result": "minecraft:charcoal",
+  "experience": 0.0,
+  "cookingtime": 40
+}

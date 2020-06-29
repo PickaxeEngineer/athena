@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "axis=y": [
+      {"model": "athena:block/clay_hay_compound_model"},
+      {"model": "athena:block/clay_hay_compound_model", "y": 90},
+      {"model": "athena:block/clay_hay_compound_model", "y": 180},
+      {"model": "athena:block/clay_hay_compound_model", "y": 270}
+    ],
+    "axis=z": {"model": "athena:block/clay_hay_compound_model", "x": 90},
+    "axis=x": {"model": "athena:block/clay_hay_compound_model", "x": 90,"y": 90}
+  }
+}

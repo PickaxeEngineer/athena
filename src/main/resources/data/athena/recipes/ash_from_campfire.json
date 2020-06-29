@@ -1,0 +1,13 @@
+{
+  "type": "campfire_cooking",
+  "group": "",
+  "ingredient": {
+    "tag": "logs"
+  },
+  "result": {
+    "item": "athena:ash",
+    "count": 2
+  },
+  "experience": 0.1,
+  "cookingtime": 600
+}

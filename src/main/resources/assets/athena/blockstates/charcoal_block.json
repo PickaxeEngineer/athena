@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": {"model": "athena:block/charcoal_block_model"}
+  }
+}

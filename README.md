@@ -3,20 +3,23 @@
 This is a minecraft mod for (re-) learning modding. 
 It does not really follow any target or theme,
 it's just a bunch of basic things and experiments,
-hence named after the greek godess of knowledge.
+hence named after the greek goddess of knowledge.
 
 ## Contents
 
 A list of features this mod adds in a very technical terminology.
 The purpose of these features is, to learn the corresponding mechanics.
-Actual in-game functionality of these are explained when implemented
+Actual in-game functionality of these are explained when implemented.
+
+This is losely based on [Minecraft by Example](https://github.com/TheGreyGhost/MinecraftByExample),
+ a truly amazing resource when it comes to modding.
 
 ### Blocks
  
  - [x] A simple cuboid block -- Yer standard block
  - [x] A block with custom model
  - [ ] Block interacting with redstone
- - [ ] A block whose placing is facing based (i.e. like log)
+ - [x] A block whose placing is facing based (i.e. like log)
  - [ ] A multi-block block (like the bed / door)
  - [ ] A fence-ish block: Non-cuboid, neighbour sensitive
  
@@ -34,7 +37,10 @@ Actual in-game functionality of these are explained when implemented
  - [ ] A TE with inventory, (e.g. a chest)
  - [ ] A TE generating Forge Energy
  - [ ] A TE using FE and doing stuff
- - [ ] A TE interacting with blocks
+ - [ ] TE interacting with blocks
+   - [ ] TE removing blocks (i.e. block breaker)
+   - [ ] TE adding blocks (i.e. block placer)
+   
  
 ### Entities
 
@@ -43,14 +49,19 @@ Actual in-game functionality of these are explained when implemented
   
 ### Crafting
 
- - [ ] Standard crafting recipes (shaped and shapeless)
- - [ ] Smelting recipes
+ - [x] Standard crafting recipes (shaped and shapeless)
+ - [x] Smelting recipes
+ - [x] Additional fuel
  - [ ] Custom Recipes (whatever this will be)
+   - [x] Cauldron Recipe (i.e. rightclick w/ block results in stuff)
+   - [ ] In-world crafting
 
 ### Misc
 
  - [ ] Multiblock structure
- - [ ] JEI Integration
+ - [ ] JEI Integration:
+    - [x] Dev Setup
+    - [ ] Plugin w/ custom recipes 
  - [ ] Event based things to integrate into vanilla
  - [ ] Dependency to other mod and usage of other mod
  

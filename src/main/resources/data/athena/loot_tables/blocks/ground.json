@@ -2,11 +2,14 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1,
+      "rolls": {
+        "min": 0,
+        "max": 1
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "athena:ground"
+          "name": "minecraft:dirt"
         }
       ],
       "conditions": [

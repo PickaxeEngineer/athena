@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "",
+  "ingredients": [
+    {"item": "athena:ash"},
+    {"item": "athena:ash"},
+    {"item": "athena:ash"},
+    {"item": "athena:ash"}
+  ],
+  "result": {
+    "item": "athena:ash_block"
+  }
+}

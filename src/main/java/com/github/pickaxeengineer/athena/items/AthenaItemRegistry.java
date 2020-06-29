@@ -1,6 +1,7 @@
 package com.github.pickaxeengineer.athena.items;
 
 import com.github.pickaxeengineer.athena.AthenaMod;
+import com.github.pickaxeengineer.athena.blocks.GenericBlock;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Direction;
@@ -24,4 +25,5 @@ public class AthenaItemRegistry {
 
     public static final RegistryObject<JackhammerItem> JACKHAMMER = GenericItem.register("jackhammer", () -> new JackhammerItem(ItemGroup.MISC));
 
+    public static final RegistryObject<GenericItem> ASH = GenericItem.register("ash", new Item.Properties().group(ItemGroup.MISC));
 }

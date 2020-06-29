@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "",
+  "pattern": [
+    "CHC",
+    "CHC",
+    "CHC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:clay_ball"
+    },
+    "H": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "item": "athena:clay_hay_compound",
+    "count": 2
+  }
+}

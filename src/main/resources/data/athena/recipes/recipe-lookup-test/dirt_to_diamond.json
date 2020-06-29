@@ -1,0 +1,17 @@
+{
+  "__comment": "This is a test recipe to see, how the recipe discovery works. apparently recipes can be organised into folders. they are found :-)",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:dirt"
+    }
+  },
+  "result": {
+    "item": "minecraft:diamond"
+  }
+}

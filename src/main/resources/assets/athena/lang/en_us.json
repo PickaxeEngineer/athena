@@ -4,5 +4,8 @@
   "block.athena.rough_metal": "Rough Metal",
   "block.athena.platted_dirt": "Platted Dirt",
   "block.athena.light_frame": "Light Frame",
-  "item.athena.net": "Bug Net"
+  "block.athena.clay_hay_compound": "Hay Enriched Clay",
+  "item.athena.net": "Bug Net",
+  "item.athena.jackhammer": "Jackhammer",
+  "item.athena.ash": "Ash"
 }

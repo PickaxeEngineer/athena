@@ -1,7 +1,10 @@
 package com.github.pickaxeengineer.athena.blocks;
 
 import com.github.pickaxeengineer.athena.AthenaMod;
+import com.github.pickaxeengineer.athena.items.GenericItem;
 import net.minecraft.block.Block;
+import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -34,6 +37,9 @@ public class AthenaBlockRegistry {
     public static final RegistryObject<GenericBlock> ROUGH_METAL = GenericBlock.register("rough_metal", Block.Properties.create(Material.IRON).hardnessAndResistance(4), ItemGroup.MISC);
     public static final RegistryObject<PlattedDirtBlock> PLATTED_DIRT = PlattedDirtBlock.register("platted_dirt", ItemGroup.MISC, () -> new PlattedDirtBlock(Block.Properties.create(Material.EARTH).hardnessAndResistance(2).harvestTool(ToolType.SHOVEL)));
     public static final RegistryObject<LightFrameBlock> LIGHT_FRAME = LightFrameBlock.register("light_frame", ItemGroup.MISC, () -> new LightFrameBlock(Block.Properties.create(Material.IRON).hardnessAndResistance(2)));
+    public static final RegistryObject<RotatedPillarBlock> CLAY_HAY_COMPOUND =  GenericBlock.register("clay_hay_compound", ItemGroup.MISC, () -> new RotatedPillarBlock(Block.Properties.create(Material.CLAY).hardnessAndResistance(2).sound(SoundType.GROUND).harvestTool(ToolType.SHOVEL)));
+    public static final RegistryObject<GenericBlock> ASH_BLOCK = GenericBlock.register("ash_block", Block.Properties.create(Material.SAND).hardnessAndResistance(1).sound(SoundType.SAND).harvestTool(ToolType.SHOVEL), ItemGroup.MISC);
+    public static final RegistryObject<GenericBlock> CHARCOAL_BLOCK = GenericBlock.register("charcoal_block", Block.Properties.create(Material.ROCK).hardnessAndResistance(4), ItemGroup.MISC);
 
     /* Additional register stuff */
 
