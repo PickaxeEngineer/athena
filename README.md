@@ -21,7 +21,7 @@ This is losely based on [Minecraft by Example](https://github.com/TheGreyGhost/M
  - [ ] Block interacting with redstone
  - [x] A block whose placing is facing based (i.e. like log)
  - [ ] A multi-block block (like the bed / door)
- - [ ] A fence-ish block: Non-cuboid, neighbour sensitive
+ - [x] A fence-ish block: Non-cuboid, neighbour sensitive
  
 ### Items
  
