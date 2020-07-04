@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -13,6 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class AthenaItemRegistry {
 
     public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, AthenaMod.MODID);
+
 
     public static final RegistryObject<GenericItem> NET = GenericItem.register("net", new Item.Properties().group( ItemGroup.MISC));
 
@@ -26,4 +28,6 @@ public class AthenaItemRegistry {
     public static final RegistryObject<JackhammerItem> JACKHAMMER = GenericItem.register("jackhammer", () -> new JackhammerItem(ItemGroup.MISC));
 
     public static final RegistryObject<GenericItem> ASH = GenericItem.register("ash", new Item.Properties().group(ItemGroup.MISC));
+
+    public static final RegistryObject<BagItem> BAG = GenericItem.register("bag", () -> new BagItem(ItemGroup.MISC));
 }

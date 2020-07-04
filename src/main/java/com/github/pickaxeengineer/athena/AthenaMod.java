@@ -1,6 +1,8 @@
 package com.github.pickaxeengineer.athena;
 
 import com.github.pickaxeengineer.athena.blocks.AthenaBlockRegistry;
+import com.github.pickaxeengineer.athena.containers.AthenaContainerRegistry;
+import com.github.pickaxeengineer.athena.gui.AthenaGuiRegistry;
 import com.github.pickaxeengineer.athena.items.AthenaItemRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -42,6 +44,9 @@ public class AthenaMod
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger();
 
+    private AthenaContainerRegistry containerRegistry = new AthenaContainerRegistry();
+    private AthenaGuiRegistry guiRegistry = new AthenaGuiRegistry();
+
     public AthenaMod() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -60,6 +65,8 @@ public class AthenaMod
         AthenaBlockRegistry.BLOCK_ITEMS.register(modEventBus);
         modEventBus.addListener(AthenaBlockRegistry::onClientSetupEvent);
         AthenaItemRegistry.ITEMS.register(modEventBus);
+        modEventBus.addListener(guiRegistry::onClientSetupEvent);
+        modEventBus.addListener(containerRegistry::registerContainers);
         // Recipes are handled by json files. see src/main/resources/data/athena/recipes
     }
 
