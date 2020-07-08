@@ -2,6 +2,7 @@ package com.github.pickaxeengineer.athena.blocks;
 
 import com.github.pickaxeengineer.athena.AthenaMod;
 import com.github.pickaxeengineer.athena.items.GenericItem;
+import com.github.pickaxeengineer.athena.tiles.GeneratorTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
@@ -42,11 +43,16 @@ public class AthenaBlockRegistry {
     public static final RegistryObject<GenericBlock> CHARCOAL_BLOCK = GenericBlock.register("charcoal_block", Block.Properties.create(Material.ROCK).hardnessAndResistance(4), ItemGroup.MISC);
     public static final RegistryObject<PipeBlock> PIPE_BLOCK = PipeBlock.register("pipe_block", ItemGroup.MISC, () -> new PipeBlock(Block.Properties.create(Material.ROCK).doesNotBlockMovement()));
 
+    // TE BLocks
+    public static final RegistryObject<FirstTileEntityBlock> FIRST_TE_BLOCK = GenericBlock.register("first_te",ItemGroup.MISC, () -> new FirstTileEntityBlock(Block.Properties.create(Material.ROCK)));
+    public static final RegistryObject<GenericTEBlock<GeneratorTileEntity>> GENERATOR_TE_BLOCK = GenericBlock.register("generator_block", ItemGroup.MISC, () -> new GenericTEBlock<>(Block.Properties.create(Material.IRON), GeneratorTileEntity::new));
+
     /* Additional register stuff */
 
     static{
         SPECIAL_RENDERED_BLOCKS.add(new Tuple<>(() -> (Block)PLATTED_DIRT.get(), RenderType.getSolid()));
-        SPECIAL_RENDERED_BLOCKS.add(new Tuple<>(() -> (Block)LIGHT_FRAME.get(), RenderType.getCutout()));
+        SPECIAL_RENDERED_BLOCKS.add(new Tuple<>(() -> (Block)LIGHT_FRAME.get(), RenderType.getCutout())); // fixme This block's feature doesn't work yet
+        SPECIAL_RENDERED_BLOCKS.add(new Tuple<>(() -> (Block)FIRST_TE_BLOCK.get(), RenderType.getSolid()));
     }
 
     /* Standard Block Addition */ // TODO Refactor
