@@ -29,15 +29,17 @@ This is losely based on [Minecraft by Example](https://github.com/TheGreyGhost/M
  - [ ] A wrench, an item which interacts with stuff
  - [x] Area of effect mining tool (hammer)
  - [ ] Tools -- Yer standard minecraft tools
- - [ ] Item with inventory (e.g. backpack)
+ - [x] Item with inventory (e.g. backpack)
  
 ### TileEntities
 
+ - [x] A simple TE without much interaction
  - [ ] A TE without inventory, but creating something (e.g. a auto-fisher)
  - [ ] A TE with inventory, (e.g. a chest)
- - [ ] A TE generating Forge Energy
+ - [x] A TE generating Forge Energy
  - [ ] A TE using FE and doing stuff
  - [ ] TE interacting with blocks
+ 
    - [ ] TE removing blocks (i.e. block breaker)
    - [ ] TE adding blocks (i.e. block placer)
    
@@ -53,6 +55,7 @@ This is losely based on [Minecraft by Example](https://github.com/TheGreyGhost/M
  - [x] Smelting recipes
  - [x] Additional fuel
  - [ ] Custom Recipes (whatever this will be)
+ 
    - [x] Cauldron Recipe (i.e. rightclick w/ block results in stuff)
    - [ ] In-world crafting
 
@@ -60,10 +63,12 @@ This is losely based on [Minecraft by Example](https://github.com/TheGreyGhost/M
 
  - [ ] Multiblock structure
  - [ ] JEI Integration:
+ 
     - [x] Dev Setup
     - [ ] Plugin w/ custom recipes 
- - [ ] Event based things to integrate into vanilla
- - [ ] Dependency to other mod and usage of other mod
+    
+ - [x] Event based things to integrate into vanilla
+ - [ ] Dependency to other mod and usage of other mod (TheOneProbe / Mekanism)
  
 ## Software Architecture
 
@@ -71,16 +76,17 @@ Another goal of this mod is to come up with as much well written
 architecture and processes to facilitate an ecosystem for future modding
 ambitions.
 
-- Registries: Registering simple blocks has lots of boilerplate code
+* Registries: Registering simple blocks has lots of boilerplate code
 
- -[x] Generic Block Registry
- -[x] Generic Item Registry
- -[ ] Tool Registry
+ - [x] Generic Block Registry
+ - [x] Generic Item Registry
+ - [x] Generic TileEntity Blocks
+ - [ ] Tool Registry
  
-- Processes / Tools: Very similar external files might be created in an automated way (e.g. gradle tasks)
+* Processes / Tools: Very similar external files might be created in an automated way (e.g. gradle tasks)
 
- -[ ] Process to create external files for simple blocks
- -[ ] Process to create external files for simple items
+ - [ ] Process to create external files for simple blocks
+ - [ ] Process to create external files for simple items
 
 ## Credits
 
