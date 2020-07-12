@@ -3,6 +3,8 @@ package com.github.pickaxeengineer.athena.blocks;
 import com.github.pickaxeengineer.athena.AthenaMod;
 import com.github.pickaxeengineer.athena.items.GenericItem;
 import com.github.pickaxeengineer.athena.tiles.GeneratorTileEntity;
+import com.github.pickaxeengineer.assetgen.BlockType;
+import com.github.pickaxeengineer.assetgen.LootType;
 import net.minecraft.block.Block;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
@@ -43,6 +45,11 @@ public class AthenaBlockRegistry {
     public static final RegistryObject<GenericBlock> CHARCOAL_BLOCK = GenericBlock.register("charcoal_block", Block.Properties.create(Material.ROCK).hardnessAndResistance(4), ItemGroup.MISC);
     public static final RegistryObject<PipeBlock> PIPE_BLOCK = PipeBlock.register("pipe_block", ItemGroup.MISC, () -> new PipeBlock(Block.Properties.create(Material.ROCK).doesNotBlockMovement()));
 
+    @com.github.pickaxeengineer.assetgen.Block(modId = AthenaMod.MODID, registryName = "test_block", blockType = BlockType.CUBE, lootType = LootType.SIMPLE_BLOCK, hasItem = true)
+    public static final RegistryObject<GenericBlock> TEST_BLOCK = GenericBlock.register("test_block", Block.Properties.create(Material.ROCK), ItemGroup.MISC);
+
+    @com.github.pickaxeengineer.assetgen.Block(modId = AthenaMod.MODID, registryName = "test_block2", blockType = BlockType.CUBE, lootType = LootType.SIMPLE_BLOCK, hasItem = true)
+    public static final RegistryObject<GenericBlock> TEST_BLOCK_2 = GenericBlock.register("test_block2", Block.Properties.create(Material.EARTH), ItemGroup.MISC);
     // TE BLocks
     public static final RegistryObject<FirstTileEntityBlock> FIRST_TE_BLOCK = GenericBlock.register("first_te",ItemGroup.MISC, () -> new FirstTileEntityBlock(Block.Properties.create(Material.ROCK)));
     public static final RegistryObject<GenericTEBlock<GeneratorTileEntity>> GENERATOR_TE_BLOCK = GenericBlock.register("generator_block", ItemGroup.MISC, () -> new GenericTEBlock<>(Block.Properties.create(Material.IRON), GeneratorTileEntity::new));
