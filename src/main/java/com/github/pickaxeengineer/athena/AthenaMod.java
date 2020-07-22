@@ -2,6 +2,7 @@ package com.github.pickaxeengineer.athena;
 
 import com.github.pickaxeengineer.athena.blocks.AthenaBlockRegistry;
 import com.github.pickaxeengineer.athena.containers.AthenaContainerRegistry;
+import com.github.pickaxeengineer.athena.entity.AthenaEntityRegistry;
 import com.github.pickaxeengineer.athena.gui.AthenaGuiRegistry;
 import com.github.pickaxeengineer.athena.items.AthenaItemRegistry;
 import com.github.pickaxeengineer.athena.tiles.AthenaTERegistry;
@@ -75,6 +76,7 @@ public class AthenaMod {
         modEventBus.addListener(guiRegistry::onClientSetupEvent);
         modEventBus.addListener(containerRegistry::registerContainers);
         AthenaTERegistry.TE_REGISTRY.register(modEventBus);
+        AthenaEntityRegistry.ENTITY_REGISTRY.register(modEventBus);
         // Recipes are handled by json files. see src/main/resources/data/athena/recipes
     }
 

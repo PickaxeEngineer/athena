@@ -6,6 +6,7 @@ import com.github.pickaxeengineer.athena.tiles.GeneratorTileEntity;
 import com.github.pickaxeengineer.assetgen.BlockType;
 import com.github.pickaxeengineer.assetgen.LootType;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
