@@ -59,4 +59,5 @@ public class BasicBulldozerEntity extends Entity {
     public IPacket<?> createSpawnPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
+
 }

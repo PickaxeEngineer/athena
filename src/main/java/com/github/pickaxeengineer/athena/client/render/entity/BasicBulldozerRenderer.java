@@ -39,7 +39,7 @@ public class BasicBulldozerRenderer extends EntityRenderer<BasicBulldozerEntity>
         // based on boat values
         matrixStackIn.scale(-1f,-1f,1f);
         // Blockbench: North oriented would result in 0 rotation.
-        matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180f));
+//        matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180f));
 
         this.model.setRotationAngles(entityIn, partialTicks, 0f, -.1f,0,0f);
         IVertexBuilder vb1 = bufferIn.getBuffer(model.getRenderType(this.getEntityTexture(entityIn)));
